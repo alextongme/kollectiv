@@ -19,7 +19,7 @@
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "express-jwt": "^5.1.0",
+    "express-jwt": "^6.0.0",
     "jsonwebtoken": "^7.1.9",
     "morgan": "^1.7.0",
     "path": "^0.12.7",
