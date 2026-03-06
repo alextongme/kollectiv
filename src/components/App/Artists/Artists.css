@@ -1,9 +1,0 @@
-#artists-container {
-  background-color: #FFFFFF;
-  width: 100vw;
-  height: 445px;
-  display: flex;
-  align-items: center;
-  overflow-x: scroll;
-}
-

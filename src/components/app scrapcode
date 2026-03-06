@@ -1,3 +1,0 @@
-background: linear-gradient(238deg, #001f3f, #0074D9, #7FDBFF, #39CCCC, #3D9970);
-background-size: 400% 400%;
-animation: movingGradient 30s ease infinite;

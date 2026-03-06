@@ -1,6 +1,0 @@
- <div id="blogpost-left-sub-container">
-      <h1 className="blogpost-title">{props.title}</h1>
-      <h2 className="blogpost-sub-title">{props.content}</h2>
-    </div>
-    <div id="blogpost-right-sub-container">
-</div>

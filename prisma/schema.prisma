@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Artist {
+  id        Int      @id @default(autoincrement()) @map("artist_id")
+  username  String   @unique
+  password  String
+  firstName String?  @map("first_name")
+  lastName  String?  @map("last_name")
+  imageUrl  String?  @map("image_url")
+  bio       String?
+  email     String?  @unique
+  createdAt DateTime @default(now()) @map("date_created")
+
+  blogPosts BlogPost[]
+  events    Event[]
+
+  @@map("artists")
+}
+
+model BlogPost {
+  id        Int      @id @default(autoincrement()) @map("blog_post_id")
+  title     String?
+  subtitle  String?
+  content   String?
+  imageUrl  String?  @map("image_url")
+  artistId  Int?     @map("artist_id")
+  createdAt DateTime @default(now()) @map("date_created")
+
+  artist Artist? @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@map("blog_posts")
+}
+
+model Event {
+  id          Int      @id @default(autoincrement()) @map("event_id")
+  title       String?
+  description String?
+  imageUrl    String?  @map("image_url")
+  artistId    Int?     @map("artist_id")
+  createdAt   DateTime @default(now()) @map("date_created")
+
+  artist Artist? @relation(fields: [artistId], references: [id], onDelete: Cascade)
+
+  @@map("events")
+}

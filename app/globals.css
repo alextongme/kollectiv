@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono: "Inconsolata", "SF Mono", "Fira Code", ui-monospace, monospace;
+  --font-brand: "Signerica_Thin", cursive;
+
+  --color-accent: #e91e8c;
+  --color-accent-hover: #c4187a;
+}
+
+@layer base {
+  body {
+    @apply antialiased bg-neutral-50 text-neutral-900 transition-colors duration-300;
+  }
+
+  .dark body,
+  body:where(.dark *) {
+    @apply bg-neutral-950 text-neutral-100;
+  }
+
+  button, a, [role="button"] {
+    cursor: pointer;
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes nav-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-link {
+  animation: nav-fade-in 0.4s ease-out both;
+}
+
+@font-face {
+  font-family: "Signerica_Thin";
+  src: url("/fonts/Signerica_Thin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
