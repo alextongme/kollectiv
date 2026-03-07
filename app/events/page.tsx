@@ -10,49 +10,80 @@ export default async function EventsPage() {
   });
 
   return (
-    <div className="flex flex-col">
-      {events.map((event) => (
-        <div key={event.id} className="relative flex min-h-[85vh] items-center justify-center">
-          {event.imageUrl && (
-            <Image
-              src={event.imageUrl}
-              alt={event.title || "Event"}
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/75 to-black/40" />
+    <div>
+      {/* Header */}
+      <div className="mx-auto max-w-7xl px-5 pt-16 pb-4 sm:px-8 sm:pt-24 sm:pb-8">
+        <p className="text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+          Upcoming
+        </p>
+        <h1 className="mt-3 text-4xl font-bold tracking-tight text-[var(--color-bone)] sm:text-6xl">
+          Parties
+        </h1>
+        <div className="mt-8 accent-line" />
+      </div>
 
-          <div className="relative z-10 mx-auto w-full max-w-3xl px-6">
-            <div className="rounded-3xl border border-white/10 bg-black/50 p-10 backdrop-blur-xl sm:p-16">
-              <h2 className="text-4xl font-bold text-[var(--color-accent)] sm:text-6xl">
-                {event.title}
-              </h2>
-              <p className="mt-4 text-lg leading-relaxed text-white/80 sm:text-2xl">
-                {event.description}
-              </p>
-              <p className="mt-6 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm text-white/50">
-                Sign up for the guest list with your phone number below:
-              </p>
-              <div className="mt-4 flex max-w-md">
-                <input
-                  type="tel"
-                  placeholder="your number"
-                  className="flex-1 rounded-l-xl border-none bg-white/95 px-5 py-3.5 text-sm text-neutral-900 outline-none placeholder:text-neutral-400"
-                />
-                <button className="rounded-r-xl bg-[var(--color-accent)] px-6 py-3.5 text-sm tracking-wide text-white transition-colors hover:bg-[var(--color-accent-hover)]">
-                  submit
-                </button>
+      {/* Events */}
+      <div className="flex flex-col">
+        {events.map((event, i) => (
+          <div
+            key={event.id}
+            className="group relative flex min-h-[80vh] items-center justify-center overflow-hidden sm:min-h-[90vh]"
+          >
+            {event.imageUrl && (
+              <Image
+                src={event.imageUrl}
+                alt={event.title || "Event"}
+                fill
+                className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
+                sizes="100vw"
+              />
+            )}
+            {/* Dark overlays */}
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
+
+            {/* Event number */}
+            <span className="absolute right-5 top-6 text-[10px] tabular-nums tracking-[4px] text-white/20 sm:right-8 sm:top-8 sm:text-sm">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8">
+              <div className="max-w-2xl">
+                <div className="h-px w-12 bg-[var(--color-accent)]" />
+                <h2 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl">
+                  {event.title}
+                </h2>
+                <p className="mt-6 text-base leading-relaxed text-white/60 sm:text-lg">
+                  {event.description}
+                </p>
+
+                {/* Guest list signup */}
+                <div className="mt-10 max-w-md">
+                  <p className="text-[10px] uppercase tracking-[4px] text-white/30">
+                    Guest list
+                  </p>
+                  <div className="mt-3 flex">
+                    <input
+                      type="tel"
+                      placeholder="your number"
+                      className="flex-1 border border-white/10 border-r-0 bg-white/5 px-5 py-3.5 text-sm text-white outline-none backdrop-blur-sm transition-colors placeholder:text-white/30 focus:border-[var(--color-accent)]/50"
+                    />
+                    <button className="shrink-0 bg-[var(--color-accent)] px-6 py-3.5 text-[10px] uppercase tracking-[3px] text-white transition-colors hover:bg-[var(--color-accent-hover)]">
+                      join
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
       {events.length === 0 && (
-        <div className="flex min-h-[50vh] items-center justify-center">
-          <p className="text-neutral-400">No events yet. Stay tuned.</p>
+        <div className="flex min-h-[60vh] items-center justify-center">
+          <p className="text-[10px] uppercase tracking-[6px] text-neutral-700">
+            No events yet. Stay tuned.
+          </p>
         </div>
       )}
     </div>

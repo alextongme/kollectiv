@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inconsolata.variable} suppressHydrationWarning>
-      <body className="font-mono bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors duration-300">
+    <html lang="en" className={`${inconsolata.variable} dark`} suppressHydrationWarning>
+      <body className="grain scanlines font-mono">
         <ThemeProvider>
           <AuthProvider>
             <div className="flex min-h-screen flex-col">

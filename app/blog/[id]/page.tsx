@@ -19,41 +19,70 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-12">
-      <Link
-        href="/"
-        className="text-sm text-neutral-400 transition-colors hover:text-neutral-900 dark:hover:text-white"
-      >
-        ← back to blog
-      </Link>
-
+    <article>
+      {/* Hero image — full bleed */}
       {post.imageUrl && (
-        <div className="relative mt-8 h-[50vh] w-full overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-800">
+        <div className="relative h-[50vh] w-full overflow-hidden sm:h-[65vh]">
           <Image
             src={post.imageUrl}
             alt={post.title || "Blog post"}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 768px"
+            sizes="100vw"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface)] via-[var(--color-surface)]/20 to-transparent" />
         </div>
       )}
 
-      <h1 className="mt-10 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-        {post.title}
-      </h1>
+      {/* Content */}
+      <div className="mx-auto max-w-3xl px-5 sm:px-8">
+        <div className={post.imageUrl ? "-mt-24 relative z-10" : "pt-16 sm:pt-24"}>
+          {/* Back link */}
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]"
+          >
+            <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+            back
+          </Link>
 
-      <p className="mt-4 text-lg text-neutral-500 dark:text-neutral-400">{post.subtitle}</p>
+          {/* Meta */}
+          <div className="mt-8 flex items-center gap-3 text-[10px] uppercase tracking-[3px] text-neutral-600">
+            {post.artist && <span>{post.artist.username}</span>}
+            <span className="h-3 w-px bg-neutral-800" />
+            <span>{new Date(post.createdAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
+          </div>
 
-      <div className="mt-2 flex items-center gap-3 text-xs text-neutral-400">
-        {post.artist && <span>by {post.artist.username}</span>}
-        <span>·</span>
-        <span>{new Date(post.createdAt).toLocaleDateString()}</span>
-      </div>
+          {/* Title */}
+          <h1 className="mt-6 text-3xl font-bold leading-[1.15] tracking-tight text-[var(--color-bone)] sm:text-5xl md:text-6xl">
+            {post.title}
+          </h1>
 
-      <div className="mt-10 whitespace-pre-line text-base leading-relaxed text-neutral-700 dark:text-neutral-300">
-        {post.content}
+          {post.subtitle && (
+            <p className="mt-4 text-lg text-neutral-500 sm:text-xl">
+              {post.subtitle}
+            </p>
+          )}
+
+          <div className="mt-8 accent-line w-16" />
+
+          {/* Body */}
+          <div className="mt-10 whitespace-pre-line text-base leading-[1.9] text-neutral-400 sm:text-lg sm:leading-[1.9]">
+            {post.content}
+          </div>
+
+          {/* Bottom nav */}
+          <div className="mt-16 mb-24 border-t border-white/5 pt-8">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]"
+            >
+              <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M19 12H5m7-7l-7 7 7 7"/></svg>
+              all posts
+            </Link>
+          </div>
+        </div>
       </div>
     </article>
   );

@@ -21,63 +21,120 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="flex justify-center px-6 py-24">
-      <div className="w-full max-w-xl">
-        <p className="text-xl leading-relaxed sm:text-2xl">
-          If you are a producer,{" "}
-          <span className="bg-gradient-to-r from-[var(--color-accent)] to-blue-600 bg-clip-text font-semibold text-transparent">
-            unicorn rider
-          </span>
-          , musician, DJ, blogger, fashionista, party bringer, space traveler,
-          silver surfer, or all of the above and would like to work with us,{" "}
-          <span className="bg-gradient-to-r from-[var(--color-accent)] to-blue-600 bg-clip-text font-semibold text-transparent">
-            please
-          </span>{" "}
-          send us a message.
-        </p>
+    <div className="min-h-[85vh]">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
+          {/* Left — intro */}
+          <div>
+            <p className="text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+              Contact
+            </p>
+            <h1 className="mt-3 text-4xl font-bold tracking-tight text-[var(--color-bone)] sm:text-5xl">
+              Let&apos;s work.
+            </h1>
+            <div className="mt-8 accent-line w-16" />
+            <p className="mt-8 text-lg leading-[1.8] text-neutral-500 sm:text-xl">
+              If you are a producer,{" "}
+              <span className="text-[var(--color-accent)]">unicorn rider</span>,
+              musician, DJ, blogger, fashionista, party bringer, space traveler,
+              silver surfer, or all of the above and would like to work with us,{" "}
+              <span className="text-[var(--color-bone)]">send us a message</span>.
+            </p>
 
-        {sent ? (
-          <div className="mt-10 rounded-2xl border border-green-200 bg-green-50 p-8 text-center text-green-700 dark:border-green-800 dark:bg-green-950 dark:text-green-400">
-            Thanks for reaching out! We&apos;ll get back to you soon.
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="mt-10 flex flex-col gap-4">
-            <div className="flex gap-4">
-              <input
-                name="firstName"
-                placeholder="first name"
-                required
-                className="flex-1 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm outline-none transition-colors focus:border-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:focus:border-neutral-400"
-              />
-              <input
-                name="lastName"
-                placeholder="last name"
-                required
-                className="flex-1 rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm outline-none transition-colors focus:border-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:focus:border-neutral-400"
-              />
+            {/* Info blocks */}
+            <div className="mt-12 space-y-6">
+              <div>
+                <p className="text-[10px] uppercase tracking-[4px] text-neutral-700">
+                  Location
+                </p>
+                <p className="mt-1 text-sm text-neutral-400">New York City</p>
+              </div>
+              <div>
+                <p className="text-[10px] uppercase tracking-[4px] text-neutral-700">
+                  Social
+                </p>
+                <div className="mt-2 flex gap-4">
+                  <a href="https://github.com/alextongme" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
+                    GitHub
+                  </a>
+                  <a href="https://open.spotify.com/artist/4lBI0UKOxwdfOk4iORLmBP" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
+                    Spotify
+                  </a>
+                  <a href="https://soundcloud.com/suimamusic" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
+                    SoundCloud
+                  </a>
+                </div>
+              </div>
             </div>
-            <input
-              name="email"
-              type="email"
-              placeholder="email"
-              required
-              className="rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm outline-none transition-colors focus:border-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:focus:border-neutral-400"
-            />
-            <textarea
-              name="message"
-              placeholder="message"
-              required
-              rows={6}
-              className="resize-y rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm outline-none transition-colors focus:border-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-white dark:focus:border-neutral-400"
-            />
-            <button
-              type="submit"
-              className="self-start rounded-full bg-neutral-900 px-8 py-3 text-sm tracking-widest text-white transition-all hover:-translate-y-0.5 hover:bg-[var(--color-accent)] hover:shadow-lg dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-[var(--color-accent)] dark:hover:text-white"
-            >
-              submit
-            </button>
-          </form>
-        )}
+          </div>
+
+          {/* Right — form */}
+          <div className="flex flex-col justify-center">
+            {sent ? (
+              <div className="border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 p-8 sm:p-10">
+                <p className="text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+                  Message sent
+                </p>
+                <p className="mt-3 text-lg text-[var(--color-bone)]">
+                  Thanks for reaching out. We&apos;ll get back to you soon.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                      First name
+                    </label>
+                    <input
+                      name="firstName"
+                      required
+                      className="w-full border border-white/10 bg-transparent px-4 py-3 text-sm text-[var(--color-bone)] outline-none transition-colors placeholder:text-neutral-800 focus:border-[var(--color-accent)]/50"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                      Last name
+                    </label>
+                    <input
+                      name="lastName"
+                      required
+                      className="w-full border border-white/10 bg-transparent px-4 py-3 text-sm text-[var(--color-bone)] outline-none transition-colors placeholder:text-neutral-800 focus:border-[var(--color-accent)]/50"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                    Email
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full border border-white/10 bg-transparent px-4 py-3 text-sm text-[var(--color-bone)] outline-none transition-colors placeholder:text-neutral-800 focus:border-[var(--color-accent)]/50"
+                  />
+                </div>
+                <div>
+                  <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={6}
+                    className="w-full resize-y border border-white/10 bg-transparent px-4 py-3 text-sm text-[var(--color-bone)] outline-none transition-colors placeholder:text-neutral-800 focus:border-[var(--color-accent)]/50"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="self-start border border-[var(--color-accent)]/30 px-8 py-3 text-[10px] uppercase tracking-[4px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
+                >
+                  send message
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );

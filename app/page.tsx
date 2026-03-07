@@ -10,53 +10,138 @@ export default async function BlogPage() {
     orderBy: { createdAt: "desc" },
   });
 
+  const [hero, ...rest] = posts;
+
   return (
-    <div className="mx-auto max-w-5xl px-6 py-12">
-      <div className="flex flex-col gap-8">
-        {posts.map((post) => (
-          <Link
-            key={post.id}
-            href={`/blog/${post.id}`}
-            className="group flex flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white transition-all hover:-translate-y-1 hover:shadow-xl sm:flex-row dark:border-neutral-800 dark:bg-neutral-900"
-          >
-            {post.imageUrl && (
-              <div className="relative h-56 w-full shrink-0 overflow-hidden bg-neutral-100 sm:h-auto sm:w-[55%] dark:bg-neutral-800">
-                <Image
-                  src={post.imageUrl}
-                  alt={post.title || "Blog post"}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                  sizes="(max-width: 640px) 100vw, 55vw"
-                />
-              </div>
+    <div>
+      {/* Hero post — full bleed */}
+      {hero && (
+        <Link href={`/blog/${hero.id}`} className="group relative block">
+          <div className="relative h-[70vh] w-full overflow-hidden sm:h-[80vh]">
+            {hero.imageUrl && (
+              <Image
+                src={hero.imageUrl}
+                alt={hero.title || "Blog post"}
+                fill
+                className="object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.02]"
+                sizes="100vw"
+                priority
+              />
             )}
-            <div className="flex flex-1 flex-col justify-center p-8 sm:p-10">
-              <h2 className="text-2xl font-bold leading-tight tracking-tight sm:text-3xl">
-                {post.title}
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                {post.subtitle}
-              </p>
-              <div className="mt-6 flex items-center gap-3">
-                <span className="inline-flex items-center rounded-full bg-neutral-900 px-5 py-1.5 text-xs tracking-widest text-white transition-colors group-hover:bg-[var(--color-accent)] dark:bg-neutral-100 dark:text-neutral-900 dark:group-hover:bg-[var(--color-accent)] dark:group-hover:text-white">
-                  read more
-                </span>
-                {post.artist && (
-                  <span className="text-xs text-neutral-400">
-                    by {post.artist.username}
+            {/* Gradient overlays */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface)] via-[var(--color-surface)]/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-surface)]/60 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 flex items-end">
+              <div className="w-full px-5 pb-12 sm:px-8 md:max-w-3xl md:px-16 md:pb-20">
+                <p className="animate-fade-up text-[10px] uppercase tracking-[4px] text-[var(--color-accent)]">
+                  latest
+                </p>
+                <h1 className="animate-fade-up delay-1 mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl">
+                  {hero.title}
+                </h1>
+                <p className="animate-fade-up delay-2 mt-4 max-w-lg text-sm leading-relaxed text-neutral-400 sm:text-base">
+                  {hero.subtitle}
+                </p>
+                <div className="animate-fade-up delay-3 mt-6 flex items-center gap-4">
+                  <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all group-hover:gap-3">
+                    read article
+                    <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
                   </span>
-                )}
+                  {hero.artist && (
+                    <>
+                      <span className="h-3 w-px bg-neutral-700" />
+                      <span className="text-[10px] tracking-[2px] text-neutral-600">
+                        by {hero.artist.username}
+                      </span>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
-          </Link>
-        ))}
+          </div>
+        </Link>
+      )}
 
-        {posts.length === 0 && (
-          <p className="py-20 text-center text-neutral-400">
+      {/* Ticker / marquee divider */}
+      <div className="overflow-hidden border-y border-white/5 bg-[var(--color-surface-raised)] py-3">
+        <div className="animate-ticker flex whitespace-nowrap">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <span key={i} className="mx-8 text-[10px] uppercase tracking-[6px] text-neutral-700">
+              music <span className="text-[var(--color-accent)]">&bull;</span> culture <span className="text-[var(--color-accent)]">&bull;</span> fashion <span className="text-[var(--color-accent)]">&bull;</span> nyc <span className="text-[var(--color-accent)]">&bull;</span> parties
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Rest of posts — editorial grid */}
+      {rest.length > 0 && (
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+          <div className="mb-12 flex items-center gap-4">
+            <h2 className="text-[10px] uppercase tracking-[6px] text-neutral-500">
+              Recent
+            </h2>
+            <div className="h-px flex-1 bg-white/5" />
+          </div>
+
+          <div className="grid gap-px bg-white/5 sm:grid-cols-2">
+            {rest.map((post, i) => (
+              <Link
+                key={post.id}
+                href={`/blog/${post.id}`}
+                className="group relative flex flex-col bg-[var(--color-surface)] transition-colors hover:bg-[var(--color-surface-raised)]"
+              >
+                {post.imageUrl && (
+                  <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    <Image
+                      src={post.imageUrl}
+                      alt={post.title || "Blog post"}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface)] via-transparent to-transparent opacity-60" />
+                  </div>
+                )}
+                <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
+                  <div>
+                    <h3 className="text-xl font-bold leading-tight tracking-tight text-[var(--color-bone)] transition-colors group-hover:text-white sm:text-2xl">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+                      {post.subtitle}
+                    </p>
+                  </div>
+                  <div className="mt-6 flex items-center justify-between">
+                    <span className="text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] opacity-0 transition-opacity group-hover:opacity-100">
+                      read more &rarr;
+                    </span>
+                    {post.artist && (
+                      <span className="text-[10px] tracking-[2px] text-neutral-700">
+                        {post.artist.username}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                {/* Issue number */}
+                <span className="absolute right-4 top-4 text-[10px] tabular-nums tracking-wider text-neutral-800">
+                  {String(i + 2).padStart(2, "0")}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {posts.length === 0 && (
+        <div className="flex min-h-[60vh] items-center justify-center">
+          <p className="text-[10px] uppercase tracking-[6px] text-neutral-700">
             No posts yet. Check back soon.
           </p>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
