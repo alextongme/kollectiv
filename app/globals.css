@@ -27,21 +27,24 @@
   font-display: swap;
 }
 
+/* Light mode variable overrides */
+:root:not(.dark) {
+  --color-accent: #8BC200;
+  --color-accent-hover: #7ab000;
+  --color-surface: #f8f8f8;
+  --color-surface-raised: #ffffff;
+  --color-surface-overlay: #f0f0f0;
+  --color-border: #e0e0e0;
+  --color-text: #1a1a1a;
+  --color-text-muted: #555555;
+  --color-text-faint: #999999;
+}
+
 @layer base {
   body {
     @apply antialiased;
     background-color: var(--color-surface);
     color: var(--color-text);
-  }
-
-  .dark body,
-  body:where(.dark *) {
-    background-color: var(--color-surface);
-    color: var(--color-text);
-  }
-
-  :not(.dark) body {
-    @apply bg-neutral-50 text-neutral-900;
   }
 
   button, a, [role="button"] {
@@ -51,6 +54,25 @@
   ::selection {
     background-color: var(--color-accent);
     color: #0A0A0A;
+  }
+
+  /* In light mode, remap "text-white" to dark text */
+  :root:not(.dark) {
+    .text-white { color: #1a1a1a; }
+    .hover\:text-white:hover { color: #1a1a1a; }
+    .group-hover\:text-white:is(:where(.group):hover *) { color: #1a1a1a; }
+    .text-white\/70 { color: rgba(26, 26, 26, 0.7); }
+    .text-white\/60 { color: rgba(26, 26, 26, 0.6); }
+    .text-white\/50 { color: rgba(26, 26, 26, 0.5); }
+    .text-white\/40 { color: rgba(26, 26, 26, 0.4); }
+    .text-white\/20 { color: rgba(26, 26, 26, 0.2); }
+    .bg-white\/20 { background-color: rgba(26, 26, 26, 0.2); }
+    .bg-black\/80 { background-color: rgba(255, 255, 255, 0.8); }
+    .bg-black\/60 { background-color: rgba(255, 255, 255, 0.6); }
+    .border-white\/5 { border-color: rgba(0, 0, 0, 0.08); }
+    .border-white\/30 { border-color: rgba(0, 0, 0, 0.15); }
+    .hover\:border-white\/30:hover { border-color: rgba(0, 0, 0, 0.15); }
+    .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03); }
   }
 }
 
