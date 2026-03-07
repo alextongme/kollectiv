@@ -19,7 +19,7 @@ export default function AboutPage() {
           {/* Right */}
           <div className="flex flex-col justify-center">
             <p className="animate-fade-up delay-2 text-xl leading-[1.8] text-[var(--color-text-muted)] sm:text-2xl">
-              <Accent>The Kollective</Accent> is a global community of creative{" "}
+              <Accent>THE KOLLECTIVE</Accent> is a global community of creative{" "}
               <Accent>artists</Accent>, with the intention of blogging about the
               unique fashion, music, and culture only found in{" "}
               <Accent>New York City</Accent>, to the rest of the{" "}

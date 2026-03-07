@@ -63,7 +63,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="group relative z-10" onClick={() => setMobileOpen(false)}>
             <span className="block font-[var(--font-heading)] text-xl font-bold uppercase tracking-wider text-white transition-colors group-hover:text-[var(--color-accent)]">
-              The Kollective
+              THE KOLLECTIVE
             </span>
           </Link>
 
@@ -273,6 +273,27 @@ export function Navbar() {
                 className="mt-2 rounded-full bg-[var(--color-accent)] py-3 font-[var(--font-heading)] text-sm font-bold uppercase tracking-wide text-[var(--color-surface)] transition-opacity hover:opacity-80 disabled:opacity-50"
               >
                 {loading ? "..." : "Enter"}
+              </button>
+
+              <div className="relative flex items-center gap-3 pt-2">
+                <div className="h-px flex-1 bg-[var(--color-border)]" />
+                <span className="text-[12px] text-[var(--color-text-faint)]">or</span>
+                <div className="h-px flex-1 bg-[var(--color-border)]" />
+              </div>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setUsername("demo");
+                  setPassword("demo123");
+                  setTimeout(() => {
+                    signIn("credentials", { username: "demo", password: "demo123", redirect: false })
+                      .then(() => { setShowLogin(false); setUsername(""); setPassword(""); });
+                  }, 0);
+                }}
+                className="rounded-full border border-[var(--color-border)] py-3 font-[var(--font-heading)] text-sm font-bold uppercase tracking-wide text-[var(--color-text-muted)] transition-all hover:border-[var(--color-accent)] hover:text-white"
+              >
+                Try Demo
               </button>
             </form>
           </div>

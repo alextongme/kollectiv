@@ -29,7 +29,7 @@ export function Footer() {
       <div className="border-t border-[var(--color-border)]">
         <div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-3 px-5 py-6 sm:flex-row sm:px-8">
           <span className="text-[13px] text-[var(--color-text-faint)]">
-            &copy; The Kollective 2016 &mdash; 2026
+            &copy; THE KOLLECTIVE 2016 &mdash; 2026
           </span>
           <div className="flex items-center gap-3">
             <span className="text-[13px] text-[var(--color-text-faint)]">

@@ -22,7 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "The Kollective — NYC Music & Culture",
+  title: "THE KOLLECTIVE — NYC Music & Culture",
   description:
     "A global community of creative artists blogging about fashion, music, and culture from New York City.",
 };

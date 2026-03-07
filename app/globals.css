@@ -56,25 +56,27 @@
     color: #0A0A0A;
   }
 
-  /* In light mode, remap "text-white" to dark text */
-  :root:not(.dark) {
-    .text-white { color: #1a1a1a; }
-    .hover\:text-white:hover { color: #1a1a1a; }
-    .group-hover\:text-white:is(:where(.group):hover *) { color: #1a1a1a; }
-    .text-white\/70 { color: rgba(26, 26, 26, 0.7); }
-    .text-white\/60 { color: rgba(26, 26, 26, 0.6); }
-    .text-white\/50 { color: rgba(26, 26, 26, 0.5); }
-    .text-white\/40 { color: rgba(26, 26, 26, 0.4); }
-    .text-white\/20 { color: rgba(26, 26, 26, 0.2); }
-    .bg-white\/20 { background-color: rgba(26, 26, 26, 0.2); }
-    .bg-black\/80 { background-color: rgba(255, 255, 255, 0.8); }
-    .bg-black\/60 { background-color: rgba(255, 255, 255, 0.6); }
-    .border-white\/5 { border-color: rgba(0, 0, 0, 0.08); }
-    .border-white\/30 { border-color: rgba(0, 0, 0, 0.15); }
-    .hover\:border-white\/30:hover { border-color: rgba(0, 0, 0, 0.15); }
-    .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03); }
-  }
 }
+
+/* Light mode: override hardcoded white/black Tailwind utilities */
+html:not(.dark) .text-white { color: #1a1a1a !important; }
+html:not(.dark) .hover\:text-white:hover { color: #1a1a1a !important; }
+html:not(.dark) .group:hover .group-hover\:text-white { color: #1a1a1a !important; }
+html:not(.dark) .text-white\/70 { color: rgba(26, 26, 26, 0.7) !important; }
+html:not(.dark) .text-white\/60 { color: rgba(26, 26, 26, 0.6) !important; }
+html:not(.dark) .text-white\/50 { color: rgba(26, 26, 26, 0.5) !important; }
+html:not(.dark) .text-white\/40 { color: rgba(26, 26, 26, 0.4) !important; }
+html:not(.dark) .text-white\/20 { color: rgba(26, 26, 26, 0.2) !important; }
+html:not(.dark) .bg-black\/80 { background-color: rgba(248, 248, 248, 0.9) !important; }
+html:not(.dark) .bg-black\/60 { background-color: rgba(248, 248, 248, 0.7) !important; }
+html:not(.dark) .from-black\/80 { --tw-gradient-from: rgba(248, 248, 248, 0.8) !important; }
+html:not(.dark) .from-black\/60 { --tw-gradient-from: rgba(248, 248, 248, 0.6) !important; }
+html:not(.dark) .bg-white { background-color: #ffffff !important; }
+html:not(.dark) .bg-white\/5 { background-color: rgba(0, 0, 0, 0.03) !important; }
+html:not(.dark) .border-white\/5 { border-color: rgba(0, 0, 0, 0.08) !important; }
+html:not(.dark) .border-white\/20 { border-color: rgba(0, 0, 0, 0.1) !important; }
+html:not(.dark) .border-white\/30 { border-color: rgba(0, 0, 0, 0.15) !important; }
+html:not(.dark) .hover\:border-white\/30:hover { border-color: rgba(0, 0, 0, 0.15) !important; }
 
 /* ===== ANIMATIONS ===== */
 @keyframes fade-up {

@@ -35,7 +35,7 @@ export default function RadioPage() {
               Live from NYC
             </span>
             <h1 className="mt-5 font-[var(--font-heading)] text-5xl font-bold leading-[1.1] text-white sm:text-7xl">
-              The Kollective<br />Radio
+              THE KOLLECTIVE<br />Radio
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)] sm:text-xl">
               A radio show exploring the sounds, culture, and creative energy of
