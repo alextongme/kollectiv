@@ -10,97 +10,70 @@ export default function RadioPage() {
   return (
     <div className="min-h-[85vh]">
       {/* Hero */}
-      <div className="relative overflow-hidden border-b border-white/5">
-        {/* Background glow */}
-        <div className="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-accent)]/5 blur-[150px]" />
-
-        <div className="relative mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28">
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            {/* Left */}
-            <div className="flex flex-col justify-center">
-              <p className="animate-fade-up font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
-                Live from NYC
-              </p>
-              <h1 className="animate-fade-up delay-1 mt-4">
-                <span
-                  className="block text-5xl text-[var(--color-bone)] sm:text-7xl"
-                  style={{ fontFamily: "Signerica_Thin, cursive" }}
-                >
-                  the kollective
-                </span>
-              </h1>
-              <div className="animate-fade-up delay-2 mt-4 accent-line w-16" />
-              <p className="animate-fade-up delay-2 mt-6 text-base leading-relaxed text-neutral-500 sm:text-lg">
-                A radio show exploring the sounds, culture, and creative energy of
-                New York City. Curated mixes, artist spotlights, and unreleased
-                tracks.
-              </p>
-              <div className="animate-fade-up delay-3 mt-8 flex items-center gap-3">
-                <a
-                  href="https://soundcloud.com/suimamusic/sets/the-kollective-all-volumes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-5 py-2.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
-                >
-                  soundcloud
-                </a>
-                <a
-                  href="https://www.youtube.com/playlist?list=PLXRV0y9Yp4E1FHgH_QdGdC7xIxIdNZv4G"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="border border-white/10 px-5 py-2.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-500 transition-all hover:border-white/20 hover:text-[var(--color-bone)]"
-                >
-                  youtube
-                </a>
-              </div>
-            </div>
-
-            {/* Right — decorative */}
-            <div className="hidden items-center justify-center lg:flex">
-              <div className="relative">
-                <div className="h-64 w-64 rounded-full border border-white/5" />
-                <div className="absolute inset-4 rounded-full border border-white/5" />
-                <div className="absolute inset-8 rounded-full border border-[var(--color-accent)]/10" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="h-3 w-3 rounded-full bg-[var(--color-accent)] shadow-[0_0_30px_var(--color-accent)]" />
-                </div>
-                {/* Rotating ring */}
-                <div className="absolute inset-0 animate-[spin_20s_linear_infinite] rounded-full border-t border-[var(--color-accent)]/20" />
-              </div>
+      <div className="border-b border-[var(--color-border)]">
+        <div className="mx-auto max-w-[1400px] px-5 py-20 sm:px-8 sm:py-28">
+          <div className="max-w-3xl">
+            <span className="inline-block rounded-full bg-[var(--color-accent)] px-3 py-1 font-[var(--font-heading)] text-[12px] font-bold uppercase tracking-wide text-[var(--color-surface)]">
+              Live from NYC
+            </span>
+            <h1 className="mt-5 font-[var(--font-heading)] text-5xl font-bold leading-[1.1] text-white sm:text-7xl">
+              The Kollective<br />Radio
+            </h1>
+            <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-muted)] sm:text-xl">
+              A radio show exploring the sounds, culture, and creative energy of
+              New York City. Curated mixes, artist spotlights, and unreleased
+              tracks.
+            </p>
+            <div className="mt-8 flex items-center gap-3">
+              <a
+                href="https://soundcloud.com/suimamusic/sets/the-kollective-all-volumes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full bg-[var(--color-accent)] px-6 py-3 font-[var(--font-heading)] text-[13px] font-bold uppercase tracking-wide text-[var(--color-surface)] transition-opacity hover:opacity-80"
+              >
+                SoundCloud
+              </a>
+              <a
+                href="https://www.youtube.com/playlist?list=PLXRV0y9Yp4E1FHgH_QdGdC7xIxIdNZv4G"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-[var(--color-border)] px-6 py-3 font-[var(--font-heading)] text-[13px] font-bold uppercase tracking-wide text-[var(--color-text-muted)] transition-all hover:border-white/30 hover:text-white"
+              >
+                YouTube
+              </a>
             </div>
           </div>
         </div>
       </div>
 
       {/* Player section */}
-      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
+      <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 sm:py-24">
         {/* Tab switcher */}
-        <div className="mb-8 flex items-center gap-6">
+        <div className="mb-8 flex items-center gap-1 rounded-full bg-[var(--color-surface-raised)] p-1 w-fit border border-[var(--color-border)]">
           <button
             onClick={() => setTab("soundcloud")}
-            className={`font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] transition-colors duration-300 ${
+            className={`rounded-full px-5 py-2 font-[var(--font-heading)] text-[13px] font-bold uppercase tracking-wide transition-all ${
               tab === "soundcloud"
-                ? "text-[var(--color-accent)]"
-                : "text-neutral-700 hover:text-neutral-400"
+                ? "bg-[var(--color-accent)] text-[var(--color-surface)]"
+                : "text-[var(--color-text-muted)] hover:text-white"
             }`}
           >
-            soundcloud
+            SoundCloud
           </button>
-          <span className="h-3 w-px bg-neutral-800" />
           <button
             onClick={() => setTab("youtube")}
-            className={`font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] transition-colors duration-300 ${
+            className={`rounded-full px-5 py-2 font-[var(--font-heading)] text-[13px] font-bold uppercase tracking-wide transition-all ${
               tab === "youtube"
-                ? "text-[var(--color-accent)]"
-                : "text-neutral-700 hover:text-neutral-400"
+                ? "bg-[var(--color-accent)] text-[var(--color-surface)]"
+                : "text-[var(--color-text-muted)] hover:text-white"
             }`}
           >
-            youtube
+            YouTube
           </button>
         </div>
 
         {/* Embeds */}
-        <div className="overflow-hidden border border-white/5 bg-[var(--color-surface-raised)]">
+        <div className="overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-raised)]">
           {tab === "soundcloud" ? (
             <iframe
               width="100%"
@@ -108,7 +81,7 @@ export default function RadioPage() {
               scrolling="no"
               frameBorder="no"
               allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/suimamusic/sets/the-kollective-all-volumes&color=%23e91e8c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
+              src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/suimamusic/sets/the-kollective-all-volumes&color=%23CDFF50&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"
               className="block"
             />
           ) : (

@@ -37,7 +37,7 @@ export default function AccountPostsPage() {
   if (loading) {
     return (
       <div className="flex h-full items-center justify-center p-8">
-        <p className="text-neutral-400">Loading posts...</p>
+        <p className="text-[var(--color-text-muted)]">Loading posts...</p>
       </div>
     );
   }
@@ -47,25 +47,25 @@ export default function AccountPostsPage() {
       {posts.map((post) => (
         <div
           key={post.id}
-          className="flex flex-col gap-3 border-b border-neutral-100 dark:border-neutral-800 p-8 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800"
+          className="flex flex-col gap-3 border-b border-[var(--color-border)] p-8 transition-colors hover:bg-[var(--color-surface-overlay)]"
         >
-          <p className="text-[11px] uppercase tracking-[2px] text-neutral-400">
+          <p className="font-[var(--font-heading)] text-[12px] font-bold uppercase tracking-wide text-[var(--color-text-faint)]">
             {new Date(post.createdAt).toLocaleDateString()}
           </p>
-          <h3 className="text-lg font-semibold">{post.title}</h3>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">{post.subtitle}</p>
+          <h3 className="text-lg font-semibold text-white">{post.title}</h3>
+          <p className="text-sm text-[var(--color-text-muted)]">{post.subtitle}</p>
           <div className="mt-2 flex gap-3">
             <Link
               href={`/account/posts/${post.id}/edit`}
-              className="rounded-full bg-neutral-900 dark:bg-neutral-100 px-5 py-2 text-xs tracking-wide text-white dark:text-neutral-900 transition-all hover:bg-[var(--color-accent)]"
+              className="rounded-full bg-[var(--color-accent)] px-5 py-2 font-[var(--font-heading)] text-[12px] font-bold tracking-wide text-[var(--color-surface)] transition-opacity hover:opacity-80"
             >
-              edit
+              Edit
             </Link>
             <button
               onClick={() => deletePost(post.id)}
-              className="rounded-full border border-red-300 dark:border-red-700 px-5 py-2 text-xs tracking-wide text-red-500 dark:text-red-400 transition-all hover:bg-red-500 hover:text-white"
+              className="rounded-full border border-red-500/30 px-5 py-2 font-[var(--font-heading)] text-[12px] font-bold tracking-wide text-red-400 transition-all hover:bg-red-500 hover:text-white"
             >
-              delete
+              Delete
             </button>
           </div>
         </div>
@@ -73,12 +73,9 @@ export default function AccountPostsPage() {
 
       {posts.length === 0 && (
         <div className="flex h-full items-center justify-center p-8">
-          <p className="text-neutral-400">
+          <p className="text-[var(--color-text-muted)]">
             No posts yet.{" "}
-            <Link
-              href="/account/posts/new"
-              className="text-[var(--color-accent)] hover:underline"
-            >
+            <Link href="/account/posts/new" className="text-[var(--color-accent)] hover:underline">
               Create one
             </Link>
           </p>

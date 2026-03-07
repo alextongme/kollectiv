@@ -23,22 +23,22 @@ export default function NewPostPage() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-5 p-8">
-      <Input name="title" placeholder="title" />
-      <Input name="subtitle" placeholder="subtitle" />
+      <Input name="title" placeholder="Title" />
+      <Input name="subtitle" placeholder="Subtitle" />
       <textarea
         name="content"
-        placeholder="content"
+        placeholder="Content"
         rows={8}
         required
-        className="w-full resize-y rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 px-4 py-3 text-sm outline-none transition-colors focus:border-neutral-900 dark:focus:border-neutral-400"
+        className="w-full resize-y rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-[var(--color-text-faint)] focus:border-[var(--color-accent)]"
       />
-      <Input name="imageUrl" placeholder="image url" />
+      <Input name="imageUrl" placeholder="Image URL" />
       <button
         type="submit"
         disabled={saving}
-        className="self-start rounded-full bg-neutral-900 dark:bg-neutral-100 px-6 py-2.5 text-sm tracking-wide text-white dark:text-neutral-900 transition-all hover:bg-[var(--color-accent)] disabled:opacity-50"
+        className="self-start rounded-full bg-[var(--color-accent)] px-6 py-2.5 font-[var(--font-heading)] text-[13px] font-bold tracking-wide text-[var(--color-surface)] transition-opacity hover:opacity-80 disabled:opacity-50"
       >
-        {saving ? "publishing..." : "publish"}
+        {saving ? "Publishing..." : "Publish"}
       </button>
     </form>
   );
@@ -50,7 +50,7 @@ function Input({ name, placeholder }: { name: string; placeholder: string }) {
       name={name}
       placeholder={placeholder}
       required={name !== "imageUrl"}
-      className="w-full rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-900 px-4 py-3 text-sm outline-none transition-colors focus:border-neutral-900 dark:focus:border-neutral-400"
+      className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-white outline-none transition-colors placeholder:text-[var(--color-text-faint)] focus:border-[var(--color-accent)]"
     />
   );
 }

@@ -4,16 +4,19 @@
 
 @theme {
   --font-mono: "Inconsolata", "SF Mono", "Fira Code", ui-monospace, monospace;
-  --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-heading: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
   --font-brand: "Signerica_Thin", cursive;
 
-  --color-accent: #e91e8c;
-  --color-accent-hover: #ff2da0;
-  --color-surface: #0a0a0a;
-  --color-surface-raised: #111111;
-  --color-surface-overlay: #161616;
-  --color-bone: #e8e4de;
+  --color-accent: #CDFF50;
+  --color-accent-hover: #d8ff70;
+  --color-surface: #0A0A0A;
+  --color-surface-raised: #131313;
+  --color-surface-overlay: #1a1a1a;
+  --color-border: #222222;
+  --color-text: #e0e0e0;
+  --color-text-muted: #888888;
+  --color-text-faint: #555555;
 }
 
 @font-face {
@@ -26,18 +29,17 @@
 
 @layer base {
   body {
-    @apply antialiased transition-colors duration-300;
+    @apply antialiased;
     background-color: var(--color-surface);
-    color: var(--color-bone);
+    color: var(--color-text);
   }
 
   .dark body,
   body:where(.dark *) {
     background-color: var(--color-surface);
-    color: var(--color-bone);
+    color: var(--color-text);
   }
 
-  /* Light mode overrides */
   :not(.dark) body {
     @apply bg-neutral-50 text-neutral-900;
   }
@@ -48,48 +50,14 @@
 
   ::selection {
     background-color: var(--color-accent);
-    color: white;
+    color: #0A0A0A;
   }
-}
-
-/* ===== GRAIN TEXTURE ===== */
-.grain::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-}
-
-/* ===== SCAN LINES ===== */
-.scanlines::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 9998;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.015) 2px,
-    rgba(0, 0, 0, 0.015) 4px
-  );
 }
 
 /* ===== ANIMATIONS ===== */
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-in {
@@ -98,25 +66,8 @@
 }
 
 @keyframes slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes ticker {
@@ -124,91 +75,46 @@
   to { transform: translateX(-50%); }
 }
 
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 1; }
-}
-
-@keyframes expand-width {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
 .animate-fade-up {
-  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-fade-in {
-  animation: fade-in 0.5s ease-out both;
+  animation: fade-in 0.4s ease-out both;
 }
 
 .animate-slide-right {
-  animation: slide-in-right 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-.animate-slide-left {
-  animation: slide-in-left 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: slide-in-right 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .animate-ticker {
-  animation: ticker 30s linear infinite;
-}
-
-.animate-expand {
-  animation: expand-width 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: ticker 25s linear infinite;
 }
 
 /* ===== STAGGER DELAYS ===== */
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
-.delay-5 { animation-delay: 0.5s; }
-.delay-6 { animation-delay: 0.6s; }
-.delay-7 { animation-delay: 0.7s; }
-.delay-8 { animation-delay: 0.8s; }
+.delay-1 { animation-delay: 0.08s; }
+.delay-2 { animation-delay: 0.16s; }
+.delay-3 { animation-delay: 0.24s; }
+.delay-4 { animation-delay: 0.32s; }
+.delay-5 { animation-delay: 0.4s; }
 
-/* ===== ACCENT LINE ===== */
-.accent-line {
-  height: 1px;
-  background: linear-gradient(90deg, var(--color-accent), transparent);
+/* ===== HORIZONTAL SCROLL ===== */
+.scroll-row {
+  display: flex;
+  gap: 1px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
-
-.accent-line-center {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
-}
-
-/* ===== HOVER EFFECTS ===== */
-.hover-lift {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-.hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px -15px rgba(233, 30, 140, 0.15);
-}
-
-.hover-glitch:hover {
-  animation: none;
-  text-shadow: 2px 0 var(--color-accent), -2px 0 #00f0ff;
-}
+.scroll-row::-webkit-scrollbar { display: none; }
+.scroll-row > * { scroll-snap-align: start; flex-shrink: 0; }
 
 /* ===== SCROLLBAR ===== */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-surface);
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-surface); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
 
 /* ===== MOBILE MENU ===== */
-.mobile-menu-open {
-  overflow: hidden;
-}
+.mobile-menu-open { overflow: hidden; }

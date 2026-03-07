@@ -12,76 +12,74 @@ export default async function EventsPage() {
   return (
     <div>
       {/* Header */}
-      <div className="mx-auto max-w-7xl px-5 pt-16 pb-4 sm:px-8 sm:pt-24 sm:pb-8">
-        <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
-          Upcoming
-        </p>
-        <h1 className="mt-3 font-[var(--font-serif)] text-4xl text-[var(--color-bone)] sm:text-6xl">
-          Parties
-        </h1>
-        <div className="mt-8 accent-line" />
+      <div className="border-b border-[var(--color-border)]">
+        <div className="mx-auto max-w-[1400px] px-5 pt-16 pb-16 sm:px-8 sm:pt-24 sm:pb-20">
+          <span className="inline-block rounded-full bg-[var(--color-accent)] px-3 py-1 font-[var(--font-heading)] text-[12px] font-bold uppercase tracking-wide text-[var(--color-surface)]">
+            Upcoming
+          </span>
+          <h1 className="mt-5 font-[var(--font-heading)] text-5xl font-bold text-white sm:text-7xl">
+            Events
+          </h1>
+          <p className="mt-4 text-lg text-[var(--color-text-muted)]">
+            Parties, shows, and gatherings across New York City.
+          </p>
+        </div>
       </div>
 
       {/* Events */}
-      <div className="flex flex-col">
-        {events.map((event, i) => (
-          <div
-            key={event.id}
-            className="group relative flex min-h-[80vh] items-center justify-center overflow-hidden sm:min-h-[90vh]"
-          >
-            {event.imageUrl && (
-              <Image
-                src={event.imageUrl}
-                alt={event.title || "Event"}
-                fill
-                className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.03]"
-                sizes="100vw"
-              />
-            )}
-            {/* Dark overlays */}
-            <div className="absolute inset-0 bg-black/60" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30" />
-
-            {/* Event number */}
-            <span className="absolute right-5 top-6 text-[10px] tabular-nums tracking-[4px] text-white/20 sm:right-8 sm:top-8 sm:text-sm">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-
-            <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8">
-              <div className="max-w-2xl">
-                <div className="h-px w-12 bg-[var(--color-accent)]" />
-                <h2 className="mt-6 font-[var(--font-serif)] text-4xl leading-[1.1] text-white sm:text-6xl md:text-7xl">
-                  {event.title}
-                </h2>
-                <p className="mt-6 text-base leading-relaxed text-white/60 sm:text-lg">
-                  {event.description}
-                </p>
-
-                {/* Guest list signup */}
-                <div className="mt-10 max-w-md">
-                  <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-white/30">
-                    Guest list
-                  </p>
-                  <div className="mt-3 flex">
-                    <input
-                      type="tel"
-                      placeholder="your number"
-                      className="flex-1 border border-white/10 border-r-0 bg-white/5 px-5 py-3.5 text-sm text-white outline-none backdrop-blur-sm transition-colors placeholder:text-white/30 focus:border-[var(--color-accent)]/50"
+      {events.length > 0 ? (
+        <div className="mx-auto max-w-[1400px] px-5 py-16 sm:px-8 sm:py-24">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {events.map((event) => (
+              <div
+                key={event.id}
+                className="group relative overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-raised)]"
+              >
+                {event.imageUrl && (
+                  <div className="relative aspect-[16/9] w-full overflow-hidden">
+                    <Image
+                      src={event.imageUrl}
+                      alt={event.title || "Event"}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                      sizes="(max-width: 640px) 100vw, 50vw"
                     />
-                    <button className="shrink-0 bg-[var(--color-accent)] px-6 py-3.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-white transition-colors hover:bg-[var(--color-accent-hover)]">
-                      join
-                    </button>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  </div>
+                )}
+
+                <div className="p-6 sm:p-8">
+                  <h2 className="font-[var(--font-heading)] text-2xl font-bold leading-tight text-white sm:text-3xl">
+                    {event.title}
+                  </h2>
+                  <p className="mt-3 text-[15px] leading-relaxed text-[var(--color-text-muted)]">
+                    {event.description}
+                  </p>
+
+                  {/* Guest list */}
+                  <div className="mt-6">
+                    <p className="font-[var(--font-heading)] text-[12px] font-bold uppercase tracking-wide text-[var(--color-text-faint)]">
+                      Guest List
+                    </p>
+                    <div className="mt-2 flex">
+                      <input
+                        type="tel"
+                        placeholder="Your number"
+                        className="flex-1 rounded-l-full border border-[var(--color-border)] border-r-0 bg-[var(--color-surface)] px-5 py-3 text-sm text-white outline-none placeholder:text-[var(--color-text-faint)] focus:border-[var(--color-accent)]"
+                      />
+                      <button className="shrink-0 rounded-r-full bg-[var(--color-accent)] px-6 py-3 font-[var(--font-heading)] text-[12px] font-bold uppercase tracking-wide text-[var(--color-surface)] transition-opacity hover:opacity-80">
+                        Join
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      {events.length === 0 && (
-        <div className="flex min-h-[60vh] items-center justify-center">
-          <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-700">
+        </div>
+      ) : (
+        <div className="flex min-h-[50vh] items-center justify-center">
+          <p className="font-[var(--font-heading)] text-lg font-bold uppercase tracking-wide text-[var(--color-text-faint)]">
             No events yet. Stay tuned.
           </p>
         </div>
