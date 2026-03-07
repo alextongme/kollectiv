@@ -5,21 +5,21 @@ import { useState } from "react";
 type Tab = "soundcloud" | "youtube";
 
 const soundcloudEpisodes = [
-  { title: "[the kollective] 011", url: "https://soundcloud.com/suimamusic/the-kollective-011" },
-  { title: "[the kollective] 010", url: "https://soundcloud.com/suimamusic/the-kollective-010" },
-  { title: "[the kollective] 009", url: "https://soundcloud.com/suimamusic/the-kollective-009" },
-  { title: "[the kollective] 008", url: "https://soundcloud.com/suimamusic/kollective-008" },
-  { title: "[the kollective] 007", url: "https://soundcloud.com/suimamusic/the-kollective-007" },
-  { title: "[the kollective] 006: SUIMA — Eurodance Mix", url: "https://soundcloud.com/suimamusic/vol-006-suima" },
-  { title: "[the kollective] 005: WILLY XO — Garage House", url: "https://soundcloud.com/suimamusic/kollective-vol-005" },
-  { title: "[the kollective] 003: Hayden — Hard House", url: "https://soundcloud.com/suimamusic/the-kollective-003" },
-  { title: "[the kollective] 002: CØB — Eurodance", url: "https://soundcloud.com/suimamusic/the-kollective-002-cob" },
-  { title: "[the kollective] 001: SUIMA — Eurodance", url: "https://soundcloud.com/suimamusic/kollective-001" },
+  { title: "[THE KOLLECTIVE] 011", url: "https://soundcloud.com/suimamusic/the-kollective-011" },
+  { title: "[THE KOLLECTIVE] 010", url: "https://soundcloud.com/suimamusic/the-kollective-010" },
+  { title: "[THE KOLLECTIVE] 009", url: "https://soundcloud.com/suimamusic/the-kollective-009" },
+  { title: "[THE KOLLECTIVE] 008", url: "https://soundcloud.com/suimamusic/kollective-008" },
+  { title: "[THE KOLLECTIVE] 007", url: "https://soundcloud.com/suimamusic/the-kollective-007" },
+  { title: "[THE KOLLECTIVE] 006: SUIMA — Eurodance Mix", url: "https://soundcloud.com/suimamusic/vol-006-suima" },
+  { title: "[THE KOLLECTIVE] 005: WILLY XO — Garage House", url: "https://soundcloud.com/suimamusic/kollective-vol-005" },
+  { title: "[THE KOLLECTIVE] 003: Hayden — Hard House", url: "https://soundcloud.com/suimamusic/the-kollective-003" },
+  { title: "[THE KOLLECTIVE] 002: CØB — Eurodance", url: "https://soundcloud.com/suimamusic/the-kollective-002-cob" },
+  { title: "[THE KOLLECTIVE] 001: SUIMA — Eurodance", url: "https://soundcloud.com/suimamusic/kollective-001" },
 ];
 
 const youtubeEpisodes = [
-  { title: "[the kollective] 011", videoId: "VIDEO_ID_011" },
-  { title: "[the kollective] 010", videoId: "VIDEO_ID_010" },
+  { title: "[THE KOLLECTIVE] 011", videoId: "VIDEO_ID_011" },
+  { title: "[THE KOLLECTIVE] 010", videoId: "VIDEO_ID_010" },
 ];
 
 export default function RadioPage() {
@@ -95,7 +95,7 @@ export default function RadioPage() {
               width="100%"
               height="500"
               src="https://www.youtube.com/embed/videoseries?list=PLXRV0y9Yp4E1FHgH_QdGdC7xIxIdNZv4G"
-              title="the kollective — youtube"
+              title="THE KOLLECTIVE — youtube"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

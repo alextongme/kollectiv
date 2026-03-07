@@ -19,7 +19,7 @@ async function main() {
       firstName: "Demo",
       lastName: "User",
       bio: "A demo account for exploring THE KOLLECTIVE.",
-      email: "demo@kollectiv.nyc",
+      email: "demo@THE KOLLECTIVE.nyc",
     },
   });
 
@@ -198,56 +198,56 @@ async function main() {
   await prisma.event.createMany({
     data: [
       {
-        title: "kollectiv w/ KETTAMA",
+        title: "THE KOLLECTIVE w/ KETTAMA",
         description:
           "The Irish selector brings his legendary energy to Brooklyn for an all-night house and breaks session.",
         imageUrl: "/images/djs/kettama.jpg",
         artistId: kettama.id,
       },
       {
-        title: "kollectiv presents: Sara Landry — Warehouse Takeover",
+        title: "THE KOLLECTIVE presents: Sara Landry — Warehouse Takeover",
         description:
           "Hard techno. No compromises. Bushwick warehouse. Bring earplugs.",
         imageUrl: "/images/djs/sara-landry.jpg",
         artistId: sara.id,
       },
       {
-        title: "kollectiv x DJ Heartstring: Cry Dance",
+        title: "THE KOLLECTIVE x DJ Heartstring: Cry Dance",
         description:
           "An evening of euphoric, emotional house music. Tissues optional. Dancing mandatory.",
         imageUrl: "/images/djs/dj-heartstring.jpg",
         artistId: heartstring.id,
       },
       {
-        title: "kollectiv x Marlon Hoffstadt: Sleaze Factory",
+        title: "THE KOLLECTIVE x Marlon Hoffstadt: Sleaze Factory",
         description:
           "Vocal house, filthy basslines, and sunrise energy. Output, Brooklyn.",
         imageUrl: "/images/djs/marlon-hoffstadt.jpg",
         artistId: marlon.id,
       },
       {
-        title: "kollectiv presents: Malugi — Golden Hour",
+        title: "THE KOLLECTIVE presents: Malugi — Golden Hour",
         description:
           "Rooftop session. Sun-soaked grooves. The happiest party in NYC.",
         imageUrl: "/images/djs/malugi.jpg",
         artistId: malugi.id,
       },
       {
-        title: "kollectiv x Justice: Cross Night",
+        title: "THE KOLLECTIVE x Justice: Cross Night",
         description:
           "The French duo takes over Terminal 5 for one unforgettable night. Marshall stacks included.",
         imageUrl: "/images/djs/justice.jpg",
         artistId: justice.id,
       },
       {
-        title: "kollectiv presents: SWIM — After Dark",
+        title: "THE KOLLECTIVE presents: SWIM — After Dark",
         description:
           "Deep house, UK garage, and left-field selections till dawn. Invite only.",
         imageUrl: "/images/djs/swim.jpg",
         artistId: swim.id,
       },
       {
-        title: "kollectiv x Daft Punk: One More Time",
+        title: "THE KOLLECTIVE x Daft Punk: One More Time",
         description:
           "A night celebrating the legacy. Helmet optional. Dancing mandatory.",
         imageUrl: "/images/djs/daft-punk.jpg",
