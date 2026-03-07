@@ -59,9 +59,11 @@
 }
 
 /* Light mode: override hardcoded white/black Tailwind utilities */
-html:not(.dark) .text-white { color: #1a1a1a !important; }
-html:not(.dark) .hover\:text-white:hover { color: #1a1a1a !important; }
-html:not(.dark) .group:hover .group-hover\:text-white { color: #1a1a1a !important; }
+/* Skip elements inside .force-white (overlays on dark images) */
+html:not(.dark) :not(.force-white) > .text-white { color: #1a1a1a !important; }
+html:not(.dark) :not(.force-white) > .hover\:text-white:hover { color: #1a1a1a !important; }
+html:not(.dark) .group:hover :not(.force-white) > .group-hover\:text-white { color: #1a1a1a !important; }
+html:not(.dark) .force-white .text-white { color: #ffffff !important; }
 html:not(.dark) .text-white\/70 { color: rgba(26, 26, 26, 0.7) !important; }
 html:not(.dark) .text-white\/60 { color: rgba(26, 26, 26, 0.6) !important; }
 html:not(.dark) .text-white\/50 { color: rgba(26, 26, 26, 0.5) !important; }

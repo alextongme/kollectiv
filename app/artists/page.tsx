@@ -62,7 +62,7 @@ export default async function ArtistsPage() {
               )}
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 flex flex-col items-start justify-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-5">
+              <div className="force-white absolute inset-0 flex flex-col items-start justify-end p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:p-5">
                 <p className="font-[var(--font-heading)] text-lg font-bold text-white">
                   {artist.username}
                 </p>
@@ -79,7 +79,7 @@ export default async function ArtistsPage() {
               </div>
 
               {/* Always-visible name on mobile */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 transition-opacity group-hover:opacity-0 sm:hidden">
+              <div className="force-white absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-3 transition-opacity group-hover:opacity-0 sm:hidden">
                 <p className="font-[var(--font-heading)] text-[13px] font-bold text-white">{artist.username}</p>
               </div>
             </div>

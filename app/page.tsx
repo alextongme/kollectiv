@@ -30,7 +30,7 @@ export default async function BlogPage() {
             )}
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-surface)] via-[var(--color-surface)]/50 to-transparent" />
 
-            <div className="absolute inset-0 flex items-end">
+            <div className="force-white absolute inset-0 flex items-end">
               <div className="w-full px-5 pb-12 sm:px-8 md:max-w-4xl md:px-16 md:pb-20">
                 <span className="animate-fade-up inline-block rounded-full bg-[var(--color-accent)] px-3 py-1 font-[var(--font-heading)] text-[12px] font-bold uppercase tracking-wide text-[var(--color-surface)]">
                   Latest
