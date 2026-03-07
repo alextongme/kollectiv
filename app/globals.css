@@ -4,6 +4,8 @@
 
 @theme {
   --font-mono: "Inconsolata", "SF Mono", "Fira Code", ui-monospace, monospace;
+  --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
   --font-brand: "Signerica_Thin", cursive;
 
   --color-accent: #e91e8c;

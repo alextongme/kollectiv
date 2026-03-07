@@ -5,7 +5,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-[10px] uppercase tracking-[6px] text-neutral-600">
+            <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-600">
               Stay in the loop
             </p>
             <p className="mt-2 text-lg text-[var(--color-bone)]">
@@ -18,7 +18,7 @@ export function Footer() {
               placeholder="your@email.com"
               className="w-full border border-white/10 border-r-0 bg-transparent px-4 py-3 text-sm text-[var(--color-bone)] placeholder-neutral-700 outline-none transition-colors focus:border-[var(--color-accent)]/50 sm:w-64"
             />
-            <button className="shrink-0 border border-white/10 bg-white/5 px-6 py-3 text-[10px] uppercase tracking-[3px] text-neutral-400 transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white">
+            <button className="shrink-0 border border-white/10 bg-white/5 px-6 py-3 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-400 transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white">
               join
             </button>
           </div>

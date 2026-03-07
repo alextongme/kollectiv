@@ -9,7 +9,7 @@ export default function AboutPage() {
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           {/* Left — label + decorative */}
           <div className="flex flex-col justify-center">
-            <p className="animate-fade-up text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+            <p className="animate-fade-up font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
               About
             </p>
             <div className="animate-fade-up delay-1 mt-6">
@@ -29,7 +29,7 @@ export default function AboutPage() {
             <div className="animate-fade-up delay-2 mt-8">
               <div className="accent-line w-24" />
             </div>
-            <p className="animate-fade-up delay-3 mt-6 text-[10px] uppercase tracking-[6px] text-neutral-600">
+            <p className="animate-fade-up delay-3 mt-6 font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-600">
               Est. 2016 &mdash; New York City
             </p>
           </div>
@@ -49,13 +49,13 @@ export default function AboutPage() {
             <div className="animate-fade-up delay-5 mt-10 flex items-center gap-6">
               <a
                 href="/contact"
-                className="border border-[var(--color-accent)]/30 px-6 py-3 text-[10px] uppercase tracking-[4px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
+                className="border border-[var(--color-accent)]/30 px-6 py-3 font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
               >
                 Get in touch
               </a>
               <a
                 href="/artists"
-                className="text-[10px] uppercase tracking-[4px] text-neutral-600 transition-colors hover:text-[var(--color-bone)]"
+                className="font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-neutral-600 transition-colors hover:text-[var(--color-bone)]"
               >
                 Meet the crew &rarr;
               </a>

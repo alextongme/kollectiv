@@ -77,7 +77,7 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group relative px-3 py-2 text-[10px] uppercase tracking-[3px] text-neutral-500 transition-colors duration-300 hover:text-[var(--color-bone)]"
+                className="group relative px-3 py-2 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-500 transition-colors duration-300 hover:text-[var(--color-bone)]"
               >
                 {link.label}
                 <span className="absolute bottom-0 left-1/2 h-px w-0 -translate-x-1/2 bg-[var(--color-accent)] transition-all duration-300 group-hover:w-3/4" />
@@ -87,7 +87,7 @@ export function Navbar() {
             {session && (
               <Link
                 href="/account"
-                className="ml-2 border border-[var(--color-accent)]/30 px-3 py-1 text-[9px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all duration-300 hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10"
+                className="ml-2 border border-[var(--color-accent)]/30 px-3 py-1 font-[var(--font-mono)] text-[9px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all duration-300 hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/10"
               >
                 account
               </Link>
@@ -143,7 +143,7 @@ export function Navbar() {
             {/* Login/Logout */}
             <button
               onClick={() => session ? signOut() : setShowLogin(true)}
-              className="text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors duration-300 hover:text-[var(--color-accent)]"
+              className="font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors duration-300 hover:text-[var(--color-accent)]"
             >
               {session ? "logout" : "login"}
             </button>
@@ -191,7 +191,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="animate-slide-right group py-3 text-4xl font-light tracking-tight text-[var(--color-bone)] transition-colors hover:text-[var(--color-accent)]"
+                className="animate-slide-right group py-3 font-[var(--font-serif)] text-4xl tracking-tight text-[var(--color-bone)] transition-colors hover:text-[var(--color-accent)]"
                 style={{ animationDelay: `${i * 0.06}s` }}
               >
                 <span className="mr-3 text-sm text-neutral-700">0{i + 1}</span>
@@ -203,7 +203,7 @@ export function Navbar() {
               <Link
                 href="/account"
                 onClick={() => setMobileOpen(false)}
-                className="animate-slide-right mt-4 border border-[var(--color-accent)]/30 px-5 py-2 text-sm uppercase tracking-[4px] text-[var(--color-accent)]"
+                className="animate-slide-right mt-4 border border-[var(--color-accent)]/30 px-5 py-2 font-[var(--font-mono)] text-sm uppercase tracking-[4px] text-[var(--color-accent)]"
                 style={{ animationDelay: `${navLinks.length * 0.06}s` }}
               >
                 account
@@ -229,14 +229,14 @@ export function Navbar() {
             <div className="animate-fade-in mt-8 flex items-center gap-4" style={{ animationDelay: "0.6s" }}>
               <button
                 onClick={toggle}
-                className="text-[10px] uppercase tracking-[3px] text-neutral-600 hover:text-[var(--color-accent)]"
+                className="font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-600 hover:text-[var(--color-accent)]"
               >
                 {theme === "dark" ? "light mode" : "dark mode"}
               </button>
               <span className="text-neutral-800">|</span>
               <button
                 onClick={() => { session ? signOut() : setShowLogin(true); setMobileOpen(false); }}
-                className="text-[10px] uppercase tracking-[3px] text-neutral-600 hover:text-[var(--color-accent)]"
+                className="font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-600 hover:text-[var(--color-accent)]"
               >
                 {session ? "logout" : "login"}
               </button>
@@ -245,7 +245,7 @@ export function Navbar() {
 
           {/* Bottom location tag */}
           <div className="animate-fade-in px-8 pb-10" style={{ animationDelay: "0.7s" }}>
-            <p className="text-[9px] uppercase tracking-[6px] text-neutral-700">
+            <p className="font-[var(--font-mono)] text-[9px] uppercase tracking-[6px] text-neutral-700">
               New York City
             </p>
           </div>
@@ -267,7 +267,7 @@ export function Navbar() {
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
-            <h2 className="mb-8 text-[10px] uppercase tracking-[6px] text-neutral-500">
+            <h2 className="mb-8 font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-500">
               sign in
             </h2>
             <form onSubmit={handleLogin} className="flex flex-col gap-5">
@@ -288,7 +288,7 @@ export function Navbar() {
               <button
                 type="submit"
                 disabled={loading}
-                className="mt-2 border border-[var(--color-accent)]/50 py-3 text-[10px] uppercase tracking-[4px] text-[var(--color-accent)] transition-all hover:bg-[var(--color-accent)] hover:text-white disabled:opacity-50"
+                className="mt-2 border border-[var(--color-accent)]/50 py-3 font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-[var(--color-accent)] transition-all hover:bg-[var(--color-accent)] hover:text-white disabled:opacity-50"
               >
                 {loading ? "..." : "enter"}
               </button>

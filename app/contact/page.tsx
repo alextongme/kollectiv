@@ -26,10 +26,10 @@ export default function ContactPage() {
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           {/* Left — intro */}
           <div>
-            <p className="text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+            <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
               Contact
             </p>
-            <h1 className="mt-3 text-4xl font-bold tracking-tight text-[var(--color-bone)] sm:text-5xl">
+            <h1 className="mt-3 font-[var(--font-serif)] text-4xl text-[var(--color-bone)] sm:text-5xl">
               Let&apos;s work.
             </h1>
             <div className="mt-8 accent-line w-16" />
@@ -44,23 +44,23 @@ export default function ContactPage() {
             {/* Info blocks */}
             <div className="mt-12 space-y-6">
               <div>
-                <p className="text-[10px] uppercase tracking-[4px] text-neutral-700">
+                <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-neutral-700">
                   Location
                 </p>
                 <p className="mt-1 text-sm text-neutral-400">New York City</p>
               </div>
               <div>
-                <p className="text-[10px] uppercase tracking-[4px] text-neutral-700">
+                <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-neutral-700">
                   Social
                 </p>
                 <div className="mt-2 flex gap-4">
-                  <a href="https://github.com/alextongme" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
+                  <a href="https://github.com/alextongme" target="_blank" rel="noopener noreferrer" className="font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
                     GitHub
                   </a>
-                  <a href="https://open.spotify.com/artist/4lBI0UKOxwdfOk4iORLmBP" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
+                  <a href="https://open.spotify.com/artist/4lBI0UKOxwdfOk4iORLmBP" target="_blank" rel="noopener noreferrer" className="font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
                     Spotify
                   </a>
-                  <a href="https://soundcloud.com/suimamusic" target="_blank" rel="noopener noreferrer" className="text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
+                  <a href="https://soundcloud.com/suimamusic" target="_blank" rel="noopener noreferrer" className="font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-600 transition-colors hover:text-[var(--color-accent)]">
                     SoundCloud
                   </a>
                 </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
           <div className="flex flex-col justify-center">
             {sent ? (
               <div className="border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/5 p-8 sm:p-10">
-                <p className="text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+                <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
                   Message sent
                 </p>
                 <p className="mt-3 text-lg text-[var(--color-bone)]">
@@ -83,7 +83,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                    <label className="mb-2 block font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-700">
                       First name
                     </label>
                     <input
@@ -93,7 +93,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                    <label className="mb-2 block font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-700">
                       Last name
                     </label>
                     <input
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                  <label className="mb-2 block font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-700">
                     Email
                   </label>
                   <input
@@ -115,7 +115,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label className="mb-2 block text-[10px] uppercase tracking-[3px] text-neutral-700">
+                  <label className="mb-2 block font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-700">
                     Message
                   </label>
                   <textarea
@@ -127,7 +127,7 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
-                  className="self-start border border-[var(--color-accent)]/30 px-8 py-3 text-[10px] uppercase tracking-[4px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
+                  className="self-start border border-[var(--color-accent)]/30 px-8 py-3 font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
                 >
                   send message
                 </button>

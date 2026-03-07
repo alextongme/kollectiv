@@ -22,14 +22,14 @@ export default async function ArtistsPage() {
       <div className="mx-auto max-w-7xl px-5 pt-16 pb-8 sm:px-8 sm:pt-24 sm:pb-12">
         <div className="flex items-end justify-between">
           <div>
-            <p className="text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+            <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
               The Crew
             </p>
-            <h1 className="mt-3 text-4xl font-bold tracking-tight text-[var(--color-bone)] sm:text-6xl">
+            <h1 className="mt-3 font-[var(--font-serif)] text-4xl text-[var(--color-bone)] sm:text-6xl">
               Artists
             </h1>
           </div>
-          <p className="hidden text-[10px] uppercase tracking-[4px] text-neutral-700 sm:block">
+          <p className="hidden font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-neutral-700 sm:block">
             {artists.length} members
           </p>
         </div>
@@ -69,7 +69,7 @@ export default async function ArtistsPage() {
                   {artist.username}
                 </p>
                 {(artist.firstName || artist.lastName) && (
-                  <p className="mt-0.5 text-[10px] uppercase tracking-[3px] text-neutral-400">
+                  <p className="mt-0.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-400">
                     {[artist.firstName, artist.lastName].filter(Boolean).join(" ")}
                   </p>
                 )}
@@ -91,7 +91,7 @@ export default async function ArtistsPage() {
 
       {artists.length === 0 && (
         <div className="flex min-h-[40vh] items-center justify-center">
-          <p className="text-[10px] uppercase tracking-[6px] text-neutral-700">
+          <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-700">
             No artists yet.
           </p>
         </div>

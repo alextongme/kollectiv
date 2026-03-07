@@ -35,17 +35,17 @@ export default async function BlogPage() {
             {/* Content */}
             <div className="absolute inset-0 flex items-end">
               <div className="w-full px-5 pb-12 sm:px-8 md:max-w-3xl md:px-16 md:pb-20">
-                <p className="animate-fade-up text-[10px] uppercase tracking-[4px] text-[var(--color-accent)]">
+                <p className="animate-fade-up font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-[var(--color-accent)]">
                   latest
                 </p>
-                <h1 className="animate-fade-up delay-1 mt-3 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl md:text-6xl">
+                <h1 className="animate-fade-up delay-1 mt-3 font-[var(--font-serif)] text-4xl leading-[1.1] text-white sm:text-5xl md:text-7xl">
                   {hero.title}
                 </h1>
                 <p className="animate-fade-up delay-2 mt-4 max-w-lg text-sm leading-relaxed text-neutral-400 sm:text-base">
                   {hero.subtitle}
                 </p>
                 <div className="animate-fade-up delay-3 mt-6 flex items-center gap-4">
-                  <span className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all group-hover:gap-3">
+                  <span className="inline-flex items-center gap-2 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all group-hover:gap-3">
                     read article
                     <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
                   </span>
@@ -68,7 +68,7 @@ export default async function BlogPage() {
       <div className="overflow-hidden border-y border-white/5 bg-[var(--color-surface-raised)] py-3">
         <div className="animate-ticker flex whitespace-nowrap">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="mx-8 text-[10px] uppercase tracking-[6px] text-neutral-700">
+            <span key={i} className="mx-8 font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-700">
               music <span className="text-[var(--color-accent)]">&bull;</span> culture <span className="text-[var(--color-accent)]">&bull;</span> fashion <span className="text-[var(--color-accent)]">&bull;</span> nyc <span className="text-[var(--color-accent)]">&bull;</span> parties
             </span>
           ))}
@@ -79,7 +79,7 @@ export default async function BlogPage() {
       {rest.length > 0 && (
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-24">
           <div className="mb-12 flex items-center gap-4">
-            <h2 className="text-[10px] uppercase tracking-[6px] text-neutral-500">
+            <h2 className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-500">
               Recent
             </h2>
             <div className="h-px flex-1 bg-white/5" />
@@ -106,7 +106,7 @@ export default async function BlogPage() {
                 )}
                 <div className="flex flex-1 flex-col justify-between p-6 sm:p-8">
                   <div>
-                    <h3 className="text-xl font-bold leading-tight tracking-tight text-[var(--color-bone)] transition-colors group-hover:text-white sm:text-2xl">
+                    <h3 className="font-[var(--font-serif)] text-xl leading-tight text-[var(--color-bone)] transition-colors group-hover:text-white sm:text-2xl">
                       {post.title}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-neutral-600">
@@ -114,7 +114,7 @@ export default async function BlogPage() {
                     </p>
                   </div>
                   <div className="mt-6 flex items-center justify-between">
-                    <span className="text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] opacity-0 transition-opacity group-hover:opacity-100">
+                    <span className="font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] opacity-0 transition-opacity group-hover:opacity-100">
                       read more &rarr;
                     </span>
                     {post.artist && (
@@ -137,7 +137,7 @@ export default async function BlogPage() {
 
       {posts.length === 0 && (
         <div className="flex min-h-[60vh] items-center justify-center">
-          <p className="text-[10px] uppercase tracking-[6px] text-neutral-700">
+          <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-700">
             No posts yet. Check back soon.
           </p>
         </div>

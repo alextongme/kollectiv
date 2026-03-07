@@ -13,10 +13,10 @@ export default async function EventsPage() {
     <div>
       {/* Header */}
       <div className="mx-auto max-w-7xl px-5 pt-16 pb-4 sm:px-8 sm:pt-24 sm:pb-8">
-        <p className="text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+        <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
           Upcoming
         </p>
-        <h1 className="mt-3 text-4xl font-bold tracking-tight text-[var(--color-bone)] sm:text-6xl">
+        <h1 className="mt-3 font-[var(--font-serif)] text-4xl text-[var(--color-bone)] sm:text-6xl">
           Parties
         </h1>
         <div className="mt-8 accent-line" />
@@ -50,7 +50,7 @@ export default async function EventsPage() {
             <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8">
               <div className="max-w-2xl">
                 <div className="h-px w-12 bg-[var(--color-accent)]" />
-                <h2 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl">
+                <h2 className="mt-6 font-[var(--font-serif)] text-4xl leading-[1.1] text-white sm:text-6xl md:text-7xl">
                   {event.title}
                 </h2>
                 <p className="mt-6 text-base leading-relaxed text-white/60 sm:text-lg">
@@ -59,7 +59,7 @@ export default async function EventsPage() {
 
                 {/* Guest list signup */}
                 <div className="mt-10 max-w-md">
-                  <p className="text-[10px] uppercase tracking-[4px] text-white/30">
+                  <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] text-white/30">
                     Guest list
                   </p>
                   <div className="mt-3 flex">
@@ -68,7 +68,7 @@ export default async function EventsPage() {
                       placeholder="your number"
                       className="flex-1 border border-white/10 border-r-0 bg-white/5 px-5 py-3.5 text-sm text-white outline-none backdrop-blur-sm transition-colors placeholder:text-white/30 focus:border-[var(--color-accent)]/50"
                     />
-                    <button className="shrink-0 bg-[var(--color-accent)] px-6 py-3.5 text-[10px] uppercase tracking-[3px] text-white transition-colors hover:bg-[var(--color-accent-hover)]">
+                    <button className="shrink-0 bg-[var(--color-accent)] px-6 py-3.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-white transition-colors hover:bg-[var(--color-accent-hover)]">
                       join
                     </button>
                   </div>
@@ -81,7 +81,7 @@ export default async function EventsPage() {
 
       {events.length === 0 && (
         <div className="flex min-h-[60vh] items-center justify-center">
-          <p className="text-[10px] uppercase tracking-[6px] text-neutral-700">
+          <p className="font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-neutral-700">
             No events yet. Stay tuned.
           </p>
         </div>

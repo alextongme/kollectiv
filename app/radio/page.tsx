@@ -18,7 +18,7 @@ export default function RadioPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             {/* Left */}
             <div className="flex flex-col justify-center">
-              <p className="animate-fade-up text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
+              <p className="animate-fade-up font-[var(--font-mono)] text-[10px] uppercase tracking-[6px] text-[var(--color-accent)]">
                 Live from NYC
               </p>
               <h1 className="animate-fade-up delay-1 mt-4">
@@ -40,7 +40,7 @@ export default function RadioPage() {
                   href="https://soundcloud.com/suimamusic/sets/the-kollective-all-volumes"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-5 py-2.5 text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
+                  className="border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 px-5 py-2.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-[var(--color-accent)] transition-all hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white"
                 >
                   soundcloud
                 </a>
@@ -48,7 +48,7 @@ export default function RadioPage() {
                   href="https://www.youtube.com/playlist?list=PLXRV0y9Yp4E1FHgH_QdGdC7xIxIdNZv4G"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-white/10 px-5 py-2.5 text-[10px] uppercase tracking-[3px] text-neutral-500 transition-all hover:border-white/20 hover:text-[var(--color-bone)]"
+                  className="border border-white/10 px-5 py-2.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[3px] text-neutral-500 transition-all hover:border-white/20 hover:text-[var(--color-bone)]"
                 >
                   youtube
                 </a>
@@ -78,7 +78,7 @@ export default function RadioPage() {
         <div className="mb-8 flex items-center gap-6">
           <button
             onClick={() => setTab("soundcloud")}
-            className={`text-[10px] uppercase tracking-[4px] transition-colors duration-300 ${
+            className={`font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] transition-colors duration-300 ${
               tab === "soundcloud"
                 ? "text-[var(--color-accent)]"
                 : "text-neutral-700 hover:text-neutral-400"
@@ -89,7 +89,7 @@ export default function RadioPage() {
           <span className="h-3 w-px bg-neutral-800" />
           <button
             onClick={() => setTab("youtube")}
-            className={`text-[10px] uppercase tracking-[4px] transition-colors duration-300 ${
+            className={`font-[var(--font-mono)] text-[10px] uppercase tracking-[4px] transition-colors duration-300 ${
               tab === "youtube"
                 ? "text-[var(--color-accent)]"
                 : "text-neutral-700 hover:text-neutral-400"
